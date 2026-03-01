@@ -1,0 +1,30 @@
+{
+  "name": "atividade-2-proginternet",
+  "version": "1.0.0",
+  "description": "desenvolvimento em aplicacao servidora em http",
+  "keywords": [
+    "metodo",
+    "post",
+    "http"
+  ],
+  "homepage": "https://github.com/williamadalaqua/atividade-2-progInternet#readme",
+  "bugs": {
+    "url": "https://github.com/williamadalaqua/atividade-2-progInternet/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamadalaqua/atividade-2-progInternet.git"
+  },
+  "license": "ISC",
+  "author": "William Dalaqua",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {}
+}
