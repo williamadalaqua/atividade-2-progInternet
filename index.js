@@ -9,7 +9,7 @@ var listaImportacao = [];
 
 app.use(express.urlencoded({extended: true}));
 
-app.get("/Importacao", (requisicao, resposta) => {
+app.get("/importacao", (requisicao, resposta) => {
     resposta.write(`
         <html lang="pt-br">
             <head>
@@ -25,7 +25,7 @@ app.get("/Importacao", (requisicao, resposta) => {
             <body>
                 <div class="container mt-5">
 
-                    <form method="POST" action="/Importacao" class="row g-3 border p-3 align-items-center">
+                    <form method="POST" action="/importacao" class="row g-3 border p-3 align-items-center">
                         <legend>
                             <h3>Cadastro de importação de veiculos automotores</h3>
                         </legend>
@@ -139,7 +139,7 @@ app.get("/Importacao", (requisicao, resposta) => {
     resposta.end();
 });
 
-app.post("/Importacao", (requisicao, resposta) => {
+app.post("/importacao", (requisicao, resposta) => {
     
 
     
@@ -154,7 +154,7 @@ app.post("/Importacao", (requisicao, resposta) => {
     const modelo = requisicao.body.modelo;
     const ano = requisicao.body.ano;
 
-    listaImportacao.push(
+    listaimportacao.push(
         {
             "nome": nome,
             "email": email,
@@ -169,10 +169,10 @@ app.post("/Importacao", (requisicao, resposta) => {
 
         }
     );
-    resposta.redirect("/listaImportacao");
+    resposta.redirect("/listaimportacao");
 });
 
-app.get("/listaImportacao", (requisicao, resposta) => {
+app.get("/listaimportacao", (requisicao, resposta) => {
     resposta.write(`
         <html lang="pt-br">
             <head>
@@ -206,8 +206,8 @@ app.get("/listaImportacao", (requisicao, resposta) => {
                         <tbody>   
 
     `);
-    for(let i = 0 ; i < listaImportacao.length; i++){
-        const importacao = listaImportacao[i];
+    for(let i = 0 ; i < listaimportacao.length; i++){
+        const importacao = listaimportacao[i];
         resposta.write(`
             <tr>
                 <td>${i+1}</td>
@@ -236,5 +236,5 @@ app.get("/listaImportacao", (requisicao, resposta) => {
 });
 
 app.listen(porta, host, () => {
-    console.log(`Servidor rodando em http://localhost:${porta}/Importacao`);
+    console.log(`Servidor rodando em http://localhost:${porta}/importacao`);
 });
