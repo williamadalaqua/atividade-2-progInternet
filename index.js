@@ -9,6 +9,10 @@ var listaImportacao = [];
 
 app.use(express.urlencoded({extended: true}));
 
+app.get("/", (requisicao, resposta) => {
+    resposta.redirect("/importacao");
+});
+
 app.get("/importacao", (requisicao, resposta) => {
     resposta.write(`
         <html lang="pt-br">
