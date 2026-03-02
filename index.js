@@ -9,10 +9,10 @@ var listaimportacao = [];
 
 app.use(express.urlencoded({extended: true}));
 
-/*app.get("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Bem vindo a Pagina inicial de cadastro");
 });
-*/
+
 app.get("/importacao", (requisicao, resposta) => {
     resposta.write(`
         <html lang="pt-br">
@@ -243,4 +243,4 @@ app.listen(porta, host, () => {
     console.log(`Servidor rodando em http://localhost:${porta}`);
 });
 
-//export default app;
+export default app;
