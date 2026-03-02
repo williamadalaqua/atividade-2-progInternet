@@ -9,8 +9,8 @@ var listaImportacao = [];
 
 app.use(express.urlencoded({extended: true}));
 
-app.get("/", (requisicao, resposta) => {
-    resposta.redirect("/importacao");
+app.get("/", (req, res) => {
+    res.send("Bem vindo a Pagina inicial de cadastro");
 });
 
 app.get("/importacao", (requisicao, resposta) => {
@@ -239,6 +239,8 @@ app.get("/listaimportacao", (requisicao, resposta) => {
     resposta.end();
 });
 
-app.listen(porta, host, () => {
-    console.log(`Servidor rodando em http://localhost:${porta}/importacao`);
-});
+/*app.listen(porta, host, () => {
+    console.log(`Servidor rodando em http://localhost:${porta}`);
+});*/
+
+export default app;
