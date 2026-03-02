@@ -5,14 +5,14 @@ const porta = 4050;
 
 const app = express();
 
-var listaImportacao = [];
+var listaimportacao = [];
 
 app.use(express.urlencoded({extended: true}));
 
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
     res.send("Bem vindo a Pagina inicial de cadastro");
 });
-
+*/
 app.get("/importacao", (requisicao, resposta) => {
     resposta.write(`
         <html lang="pt-br">
@@ -239,8 +239,8 @@ app.get("/listaimportacao", (requisicao, resposta) => {
     resposta.end();
 });
 
-/*app.listen(porta, host, () => {
+app.listen(porta, host, () => {
     console.log(`Servidor rodando em http://localhost:${porta}`);
-});*/
+});
 
-export default app;
+//export default app;
